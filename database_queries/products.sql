@@ -13,3 +13,9 @@ JOIN products p ON od.product_code = p.product_code
 JOIN orders o ON od.order_number = o.order_number
 GROUP BY p.product_name, p.product_code
 ORDER BY numpurchasers DESC;
+
+-- Retrieve product vendor details
+SELECT productVendor, COUNT(productCode) AS num_products
+FROM products
+GROUP BY productVendor
+ORDER BY num_products DESC;

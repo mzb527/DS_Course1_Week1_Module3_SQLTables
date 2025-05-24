@@ -5,6 +5,10 @@ LEFT JOIN orders o ON c.customer_number = o.customer_number
 WHERE o.customer_number IS NULL
 ORDER BY c.last_name;
 
+-- Retrieve full customer address details
+SELECT first_name, last_name, address_line1, address_line2, city, state, postal_code, country
+FROM customers;
+
 -- Count the number of customers per office location
 SELECT o.office_code, o.city, COUNT(DISTINCT c.customer_number) AS n_customers
 FROM customers c
